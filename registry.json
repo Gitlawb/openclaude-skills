@@ -85,6 +85,28 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/dockerfile-review",
+    "name": "dockerfile-review",
+    "description": "Reviews Dockerfiles for size, security, caching, and reproducibility issues.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/dockerfile-review/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/dockerfile-review/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/dockerfile-review",
+    "sha256": "7cdc2ac26a1be2bbee0560e29aac8ff172eb59e025bc769b2af2728d3df76476",
+    "title": "Dockerfile Review",
+    "category": "ci",
+    "tags": [
+      "docker",
+      "containers",
+      "devops",
+      "security"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/frontend-implementation",
     "name": "frontend-implementation",
     "description": "Implements frontend components following project conventions.",
