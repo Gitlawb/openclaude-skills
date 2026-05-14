@@ -150,6 +150,27 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/error-message-decode",
+    "name": "error-message-decode",
+    "description": "Decodes cryptic error messages, stack traces, and panics into actual causes and fix paths.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/error-message-decode/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/error-message-decode/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/error-message-decode",
+    "sha256": "e74e4e0f0bf128272f5d5616aea2dd11c548171ee867f9b8dc91eca010ec0102",
+    "title": "Error Message Decode",
+    "category": "debugging",
+    "tags": [
+      "errors",
+      "debugging",
+      "troubleshooting"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/frontend-implementation",
     "name": "frontend-implementation",
     "description": "Implements frontend components following project conventions.",
