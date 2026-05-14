@@ -1,40 +1,162 @@
-# openclaude-skills
+# Gitlawb Skill Hub
 
-The source of truth for the **Gitlawb Skill Hub** — a registry of installable
-skills for the `openclaude` CLI.
+> Curated registry of installable skills for the [`openclaude`](https://github.com/Gitlawb/openclaude) CLI.
 
-## What this repo is
+[![npm](https://img.shields.io/npm/v/@gitlawb/skill-validator?label=%40gitlawb%2Fskill-validator)](https://www.npmjs.com/package/@gitlawb/skill-validator)
+[![Skills](https://img.shields.io/badge/skills-10-blue)](#available-skills)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Validate](https://github.com/Gitlawb/openclaude-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Gitlawb/openclaude-skills/actions/workflows/validate.yml)
 
-Each folder under `skills/` is one skill: a self-contained `SKILL.md` (with
-optional `README.md`) that defines when and how a skill should be used. The
-registry is built from these folders into a single `registry.json` at the
-repo root, which the CLI reads.
+Skills are reusable, opinionated workflows that teach `openclaude` how to
+handle a specific kind of task — reviewing a pull request, auditing code
+for security risks, debugging a runtime error, writing tests. Instead of
+re-prompting from scratch every time, you install a skill once and the
+agent knows how to do that job.
 
-## Installing a skill
+This repo is the source of truth. The CLI reads `registry.json`. The
+[Skill Hub website](https://github.com/Gitlawb/openclaude-site) renders
+the same data as a browsable catalog.
+
+## How it works
+
+```
+           ┌──────────────────────────────────────┐
+           │  Gitlawb/openclaude-skills (this)    │
+           │                                      │
+           │  skills/<name>/SKILL.md  ─► registry.json
+           └──────────────────────────────────────┘
+                             │
+             ┌───────────────┴────────────────┐
+             ▼                                ▼
+  ┌─────────────────────┐         ┌─────────────────────┐
+  │   openclaude CLI    │         │  openclaude-site    │
+  │  installs skills    │         │  browses catalog    │
+  └─────────────────────┘         └─────────────────────┘
+```
+
+- `registry.json` is built from `skills/<name>/SKILL.md` files
+- Every entry is validated by [`@gitlawb/skill-validator`](https://www.npmjs.com/package/@gitlawb/skill-validator)
+- GitHub serves `registry.json` at a stable raw URL — no backend, no server, no API
+
+## Install a skill
 
 ```
 openclaude skills add gitlawb/<name>
 ```
 
-For example: `openclaude skills add gitlawb/pr-review`.
+For example:
+
+```
+openclaude skills add gitlawb/pr-review
+```
+
+After install, start a new openclaude session. The skill becomes available
+the next time you ask the agent something that matches the skill's
+"Use this skill when" rules.
+
+## Available skills
+
+| Skill | Category | Description |
+|-------|----------|-------------|
+| [`pr-review`](skills/pr-review/) | code-review | Reviews pull requests for correctness, style, and risks. |
+| [`security-audit`](skills/security-audit/) | security | Reviews code changes for common security risks. |
+| [`debugging`](skills/debugging/) | debugging | Helps diagnose and fix runtime errors, crashes, and unexpected behavior. |
+| [`test-writer`](skills/test-writer/) | testing | Writes unit, integration, and end-to-end tests. |
+| [`refactor-plan`](skills/refactor-plan/) | refactor | Plans multi-file refactors with clear steps and risk assessment. |
+| [`provider-setup`](skills/provider-setup/) | provider | Configures openclaude to route through OpenAI-compatible providers. |
+| [`ci-fix`](skills/ci-fix/) | ci | Diagnoses and fixes CI pipeline failures. |
+| [`frontend-implementation`](skills/frontend-implementation/) | frontend | Implements frontend components following project conventions. |
+| [`database-review`](skills/database-review/) | database | Reviews database schema changes, migrations, and queries. |
+| [`release-maintainer`](skills/release-maintainer/) | release | Prepares releases — version bumps, changelogs, release notes. |
+
+## What a skill looks like
+
+Every skill is a folder under `skills/` with a `SKILL.md` file:
+
+```
+skills/pr-review/
+  ├── SKILL.md        # the skill itself: frontmatter + procedure
+  └── README.md       # short description for people browsing GitHub
+```
+
+`SKILL.md` is plain markdown with YAML frontmatter:
+
+```markdown
+---
+name: pr-review
+title: PR Review
+description: Reviews pull requests for correctness, style, and risks.
+category: code-review
+tags: [review, github, quality]
+trust: official
+version: 0.1.0
+license: MIT
+---
+
+# PR Review
+
+## Use this skill when
+- The user asks to review a pull request or diff...
+
+## Procedure
+1. Get the diff with `gh pr diff <number>`...
+```
+
+See [`skills/pr-review/SKILL.md`](skills/pr-review/SKILL.md) for the full
+reference structure.
 
 ## Contributing a skill
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the full guide and
-[`REVIEW_POLICY.md`](REVIEW_POLICY.md) for the rules every PR is
-reviewed against. The short version:
+[`REVIEW_POLICY.md`](REVIEW_POLICY.md) for the rules every PR is reviewed
+against. The short version:
 
 1. Create `skills/<your-skill>/SKILL.md` — copy the structure from
    [`skills/pr-review/`](skills/pr-review/).
-2. Validate it locally with `bun run scripts/validate-skill.ts skills/<your-skill>/`.
-3. Rebuild the registry with `bun run build:registry`.
+2. Validate it locally:
+   ```
+   bun install
+   bun run scripts/validate-skill.ts skills/<your-skill>/
+   ```
+3. Rebuild the registry:
+   ```
+   bun run build:registry
+   ```
 4. Open a PR using the "new skill" template.
 
-## Where the validator lives
+First-time contributors should set `trust: community` in frontmatter.
+Maintainer-reviewed skills become `verified`. `official` is reserved
+for skills authored by Gitlawb maintainers. See
+[`DECISIONS.md`](DECISIONS.md) for the trust tier definitions.
+
+## Trust tiers
+
+| Tier | Who authors it | Review requirement |
+|------|----------------|--------------------|
+| `official` | Gitlawb maintainers | 2-maintainer review |
+| `verified` | Third-party | 1-maintainer review, same quality bar as official |
+| `community` | Third-party | Automated checks only; "review before enabling" warning in CLI |
+
+The MVP ships only `official` skills. The schema accepts `verified` and
+`community` so the CLI and website can render them correctly once
+community submissions open.
+
+## Validator
 
 The validator is published to npm as
 [`@gitlawb/skill-validator`](https://www.npmjs.com/package/@gitlawb/skill-validator).
-Its source lives at `packages/validator/` in this repo. The CLI, CI workflow,
-and any third-party tooling depend on the published package rather than
-re-implementing the rules. See `DECISIONS.md` for the schema and policy
-this registry locks in.
+Its source lives at [`packages/validator/`](packages/validator/) in this
+repo. The CLI, CI workflows, and any third-party tooling depend on the
+published package rather than re-implementing the rules.
+
+## Related projects
+
+- **[`Gitlawb/openclaude`](https://github.com/Gitlawb/openclaude)** — the
+  CLI that installs and runs skills.
+- **[`Gitlawb/openclaude-site`](https://github.com/Gitlawb/openclaude-site)** —
+  the public Skill Hub website. Reads this repo's `registry.json` at build
+  time and renders it as a browsable catalog.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
