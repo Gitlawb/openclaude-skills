@@ -46,6 +46,36 @@ describe('validateSkillFolder integration', () => {
     expect(result.ok).toBe(false);
   });
 
+  it('flags a folder whose name does not match the frontmatter "name"', async () => {
+    const folder = path.join(TMP_ROOT, 'mismatched-folder');
+    await fs.mkdir(folder, { recursive: true });
+    const content = [
+      '---',
+      'name: not-the-folder',
+      'description: Fixture whose frontmatter name disagrees with the folder name.',
+      'trust: community',
+      'version: 0.1.0',
+      'license: MIT',
+      '---',
+      '',
+      '# Mismatched',
+      '',
+      'Body padded to clear the minimum-character requirement so the validator',
+      'reaches the folder/name match check and reports it cleanly.',
+      '',
+      '## Use this skill when',
+      'never',
+      '',
+      '## Procedure',
+      '1. step',
+    ].join('\n');
+    await fs.writeFile(path.join(folder, 'SKILL.md'), content, 'utf8');
+
+    const result = await validateSkillFolder(folder);
+    expect(result.ok).toBe(false);
+    expect(result.errors.map((e) => e.code)).toContain('frontmatter.name_folder_mismatch');
+  });
+
   it('reports a single clear error when SKILL.md is missing', async () => {
     const folder = path.join(TMP_ROOT, 'empty-folder');
     await fs.mkdir(folder, { recursive: true });

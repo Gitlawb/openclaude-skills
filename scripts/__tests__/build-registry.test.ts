@@ -61,11 +61,22 @@ describe('buildRegistry', () => {
     const skillsDir = path.join(TMP_ROOT, 'sorted-skills');
     await fs.mkdir(skillsDir, { recursive: true });
 
-    // Copy the valid-skill fixture three times under different folder names.
-    // The validator only cares about folder contents, not the folder name.
-    await copyFixtureAsSkill('valid-skill', skillsDir, 'zeta');
-    await copyFixtureAsSkill('valid-skill', skillsDir, 'alpha');
-    await copyFixtureAsSkill('valid-skill', skillsDir, 'mu');
+    // Three skills with frontmatter `name` matching folder name; the
+    // validator now requires this match, so each fixture is generated
+    // from the valid-skill template with the right name in place.
+    const template = await fs.readFile(
+      path.join(VALIDATOR_FIXTURES, 'valid-skill', 'SKILL.md'),
+      'utf8',
+    );
+    for (const folder of ['zeta', 'alpha', 'mu']) {
+      const dst = path.join(skillsDir, folder);
+      await fs.mkdir(dst, { recursive: true });
+      await fs.writeFile(
+        path.join(dst, 'SKILL.md'),
+        template.replace(/^name: valid-skill$/m, `name: ${folder}`),
+        'utf8',
+      );
+    }
 
     const result = await buildRegistry({
       skillsDir,
@@ -73,7 +84,6 @@ describe('buildRegistry', () => {
     });
 
     expect(result.errors).toEqual([]);
-    // Folder names differ but frontmatter name is the same — id uses folder name.
     expect(result.entries.map((e) => e.id)).toEqual([
       'gitlawb/alpha',
       'gitlawb/mu',
