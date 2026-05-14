@@ -299,6 +299,27 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/regex-craft",
+    "name": "regex-craft",
+    "description": "Writes regex patterns from natural-language descriptions, with test cases and pitfall warnings.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/regex-craft/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/regex-craft/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/regex-craft",
+    "sha256": "faec0f8a75803795e5cb082c5b64ca7c129315c47b499230dcfaeac97ef76519",
+    "title": "Regex Craft",
+    "category": "general",
+    "tags": [
+      "regex",
+      "parsing",
+      "patterns"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/release-maintainer",
     "name": "release-maintainer",
     "description": "Prepares releases — version bumps, changelogs, release notes.",
