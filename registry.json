@@ -238,6 +238,28 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/loop-task-author",
+    "name": "loop-task-author",
+    "description": "Writes .openclaude/loop.md files for openclaude's scheduled maintenance loop.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/loop-task-author/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/loop-task-author/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/loop-task-author",
+    "sha256": "50d358d5a24175f213dff43f857bf8c174883127ff69fdc06e0cdf3f8adbea17",
+    "title": "Loop Task Author",
+    "category": "provider",
+    "tags": [
+      "openclaude",
+      "cron",
+      "automation",
+      "scheduled-tasks"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/pr-description-writer",
     "name": "pr-description-writer",
     "description": "Writes pull request descriptions with Problem / Fix / Verification structure.",
