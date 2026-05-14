@@ -453,6 +453,28 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/secret-in-client-bundle-check",
+    "name": "secret-in-client-bundle-check",
+    "description": "Detects API keys, tokens, and secrets accidentally bundled into client-side JavaScript before production deploy.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/secret-in-client-bundle-check/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/secret-in-client-bundle-check/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/secret-in-client-bundle-check",
+    "sha256": "a90d57bd2296d7c22e870f37546b819413be9706ad1abc4b178bffa4bb958d63",
+    "title": "Secret in Client Bundle Check",
+    "category": "security",
+    "tags": [
+      "security",
+      "secrets",
+      "deployment",
+      "vibe-coding"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/security-audit",
     "name": "security-audit",
     "description": "Reviews code changes for common security risks.",
