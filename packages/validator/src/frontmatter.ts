@@ -1,5 +1,5 @@
 import yaml from 'js-yaml';
-import spdxIds from 'spdx-license-ids';
+import { SPDX_IDS } from './spdx-ids.js';
 import {
   APPROVED_CATEGORIES,
   TRUST_TIERS,
@@ -28,8 +28,6 @@ const KNOWN_FIELDS = new Set([
   'author',
   'compatibility',
 ]);
-
-const SPDX_SET = new Set<string>(spdxIds as readonly string[]);
 
 export interface FrontmatterParseResult {
   parsed?: ParsedFrontmatter;
@@ -147,7 +145,7 @@ export function parseFrontmatter(yamlText: string): FrontmatterParseResult {
   const license = fm.license;
   if (typeof license !== 'string') {
     errors.push(err('frontmatter.missing_license', 'Missing required field "license".', 'license'));
-  } else if (!SPDX_SET.has(license)) {
+  } else if (!SPDX_IDS.has(license)) {
     errors.push(
       err(
         'frontmatter.invalid_license',

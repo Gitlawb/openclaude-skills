@@ -1,9 +1,12 @@
 {
   "name": "@gitlawb/skill-validator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validator for skills in the Gitlawb Skill Hub registry.",
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -22,12 +25,12 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "js-yaml": "^4.1.0",
-    "spdx-license-ids": "^3.0.20"
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^25.7.0"
+    "@types/node": "^25.7.0",
+    "spdx-license-ids": "^3.0.20"
   },
   "publishConfig": {
     "access": "public"
