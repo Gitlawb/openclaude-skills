@@ -260,6 +260,28 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/mcp-server-pick",
+    "name": "mcp-server-pick",
+    "description": "Recommends and configures MCP servers for openclaude based on the user's described workflow.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/mcp-server-pick/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/mcp-server-pick/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/mcp-server-pick",
+    "sha256": "a11146e6e8e822fbcce0649bbb108f8bec569400879a44deaea21e6ab0019362",
+    "title": "MCP Server Pick",
+    "category": "provider",
+    "tags": [
+      "openclaude",
+      "mcp",
+      "integrations",
+      "model-context-protocol"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/pr-description-writer",
     "name": "pr-description-writer",
     "description": "Writes pull request descriptions with Problem / Fix / Verification structure.",
