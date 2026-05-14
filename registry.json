@@ -474,6 +474,29 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/stripe-webhook-setup",
+    "name": "stripe-webhook-setup",
+    "description": "Sets up Stripe webhooks correctly with signature verification, idempotency, and local testing.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/stripe-webhook-setup/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/stripe-webhook-setup/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/stripe-webhook-setup",
+    "sha256": "533e80a85124cc174f093206efec4dbb521e3c701420394a5e16950573efd773",
+    "title": "Stripe Webhook Setup",
+    "category": "ci",
+    "tags": [
+      "stripe",
+      "payments",
+      "webhooks",
+      "vibe-coding",
+      "security"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/subagent-design",
     "name": "subagent-design",
     "description": "Writes custom openclaude subagent definitions in .openclaude/agents/.",
