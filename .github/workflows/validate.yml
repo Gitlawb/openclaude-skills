@@ -7,6 +7,14 @@ on:
       - 'packages/**'
       - 'scripts/**'
       - '.github/workflows/validate.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'skills/**'
+      - 'packages/**'
+      - 'scripts/**'
+      - '.github/workflows/validate.yml'
 
 permissions:
   contents: read
