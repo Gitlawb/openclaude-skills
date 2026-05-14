@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean --target es2022",
+    "prepare": "npm run build",
     "test": "vitest run",
     "lint": "tsc --noEmit"
   },
