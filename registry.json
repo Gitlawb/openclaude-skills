@@ -257,6 +257,28 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/provider-debug",
+    "name": "provider-debug",
+    "description": "Diagnoses openclaude provider configuration problems and proposes fixes.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/provider-debug/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/provider-debug/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/provider-debug",
+    "sha256": "286d02d649291d4b584fbfc7a44ef802915a65d40efde1d6267f72fe36d8c578",
+    "title": "Provider Debug",
+    "category": "provider",
+    "tags": [
+      "openclaude",
+      "provider",
+      "debugging",
+      "configuration"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/provider-setup",
     "name": "provider-setup",
     "description": "Configures openclaude to route through OpenAI-compatible providers.",
