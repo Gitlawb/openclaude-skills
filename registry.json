@@ -1,5 +1,26 @@
 [
   {
+    "id": "gitlawb/ci-fix",
+    "name": "ci-fix",
+    "description": "Diagnoses and fixes CI pipeline failures.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/ci-fix/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/ci-fix/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/ci-fix",
+    "sha256": "28265c02bc9b9283693d4ecf477e58999c59ae4287245d98d42211f64c0a0311",
+    "title": "CI Fix",
+    "category": "ci",
+    "tags": [
+      "ci",
+      "github-actions",
+      "build"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/debugging",
     "name": "debugging",
     "description": "Helps diagnose and fix runtime errors, crashes, and unexpected behavior.",
@@ -38,6 +59,48 @@
       "review",
       "github",
       "quality"
+    ],
+    "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/provider-setup",
+    "name": "provider-setup",
+    "description": "Configures openclaude to route through OpenAI-compatible providers.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/provider-setup/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/provider-setup/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/provider-setup",
+    "sha256": "97207f8ebed27b2f35dc409eaaebad2fc3697bfa124dcad68b11664b79a7d791",
+    "title": "Provider Setup",
+    "category": "provider",
+    "tags": [
+      "openclaude",
+      "provider",
+      "configuration"
+    ],
+    "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/refactor-plan",
+    "name": "refactor-plan",
+    "description": "Plans multi-file refactors with clear steps and risk assessment.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/refactor-plan/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/refactor-plan/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/refactor-plan",
+    "sha256": "a33cfd6ca37e4e913a4498160b7e316d7c9f240e0410cc5fdf019a50e1982f9e",
+    "title": "Refactor Plan",
+    "category": "refactor",
+    "tags": [
+      "refactor",
+      "architecture",
+      "planning"
     ],
     "author": "gnanam"
   },
