@@ -129,6 +129,27 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/docs-writer",
+    "name": "docs-writer",
+    "description": "Writes or updates documentation that matches the project's voice and structure.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/docs-writer/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/docs-writer/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/docs-writer",
+    "sha256": "4bcbb6726b96e088df9e390996b813919548fdc7749dfba407ea0b627a3288c3",
+    "title": "Docs Writer",
+    "category": "docs",
+    "tags": [
+      "documentation",
+      "readme",
+      "technical-writing"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/frontend-implementation",
     "name": "frontend-implementation",
     "description": "Implements frontend components following project conventions.",
