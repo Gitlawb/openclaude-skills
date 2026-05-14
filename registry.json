@@ -21,6 +21,27 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/commit-message-craft",
+    "name": "commit-message-craft",
+    "description": "Writes commit messages that follow the repo's existing conventions.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/commit-message-craft/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/commit-message-craft/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/commit-message-craft",
+    "sha256": "d38fc717b6844ed175cec1dfcbb2af12cdcaab7ae228ae8e6e4d05e0a6675be3",
+    "title": "Commit Message Craft",
+    "category": "code-review",
+    "tags": [
+      "git",
+      "commits",
+      "conventional-commits"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/database-review",
     "name": "database-review",
     "description": "Reviews database schema changes, migrations, and queries.",
