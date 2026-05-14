@@ -7,10 +7,16 @@
   "packageManager": "bun@1.3.10",
   "scripts": {
     "build": "bun run --filter '*' build",
-    "test": "bun run --filter '*' test",
-    "lint": "bun run --filter '*' lint"
+    "test": "bun run --filter '*' test && bun x vitest run --config vitest.root.config.ts",
+    "lint": "bun run --filter '*' lint && bun x tsc --noEmit -p tsconfig.scripts.json",
+    "build:registry": "bun run scripts/build-registry.ts",
+    "validate": "bun run scripts/validate-skill.ts"
+  },
+  "dependencies": {
+    "@gitlawb/skill-validator": "workspace:*"
   },
   "devDependencies": {
+    "@types/node": "^22.9.0",
     "typescript": "^5.6.3",
     "tsup": "^8.3.5",
     "vitest": "^2.1.5"
