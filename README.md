@@ -20,10 +20,12 @@ For example: `openclaude skills add gitlawb/pr-review`.
 
 ## Contributing a skill
 
-See `CONTRIBUTING.md` (added in a later stage) for the full guide. The short
-version:
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the full guide and
+[`REVIEW_POLICY.md`](REVIEW_POLICY.md) for the rules every PR is
+reviewed against. The short version:
 
-1. Create `skills/<your-skill>/SKILL.md`.
+1. Create `skills/<your-skill>/SKILL.md` — copy the structure from
+   [`skills/pr-review/`](skills/pr-review/).
 2. Validate it locally with `bun run scripts/validate-skill.ts skills/<your-skill>/`.
 3. Rebuild the registry with `bun run build:registry`.
 4. Open a PR using the "new skill" template.
