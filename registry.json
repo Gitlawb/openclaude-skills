@@ -21,6 +21,28 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/database-review",
+    "name": "database-review",
+    "description": "Reviews database schema changes, migrations, and queries.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/database-review/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/database-review/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/database-review",
+    "sha256": "43419bba1f2c1708b5eb2baec608385e82150f8244cfca064370b2817586ed05",
+    "title": "Database Review",
+    "category": "database",
+    "tags": [
+      "database",
+      "migrations",
+      "sql",
+      "postgres"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/debugging",
     "name": "debugging",
     "description": "Helps diagnose and fix runtime errors, crashes, and unexpected behavior.",
@@ -38,6 +60,28 @@
       "debugging",
       "troubleshooting",
       "errors"
+    ],
+    "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/frontend-implementation",
+    "name": "frontend-implementation",
+    "description": "Implements frontend components following project conventions.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/frontend-implementation/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/frontend-implementation/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/frontend-implementation",
+    "sha256": "c44ffc31f197dbef6b370b747a65bfdf0634942bbb5d26b0640f825a95bde3fa",
+    "title": "Frontend Implementation",
+    "category": "frontend",
+    "tags": [
+      "frontend",
+      "ui",
+      "react",
+      "components"
     ],
     "author": "gnanam"
   },
@@ -101,6 +145,27 @@
       "refactor",
       "architecture",
       "planning"
+    ],
+    "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/release-maintainer",
+    "name": "release-maintainer",
+    "description": "Prepares releases — version bumps, changelogs, release notes.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/release-maintainer/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/release-maintainer/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/release-maintainer",
+    "sha256": "eccf12b0fccab63dfec20fd20458a6eb1ea4db59b574e89c8de199f871b1bb84",
+    "title": "Release Maintainer",
+    "category": "release",
+    "tags": [
+      "release",
+      "changelog",
+      "versioning"
     ],
     "author": "gnanam"
   },
