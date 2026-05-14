@@ -53,40 +53,19 @@ function snippetOf(line: string): string {
   return line.length > 100 ? line.slice(0, 100) : line;
 }
 
-/**
- * Iterates the lines of a body, skipping any line that is inside a fenced
- * code block (``` or ~~~). Returns the lines flagged by the scan rules.
- */
+// Scans every line of the body — including content inside fenced code blocks.
+// Skills are read by agents that may treat fenced commands as runnable, so the
+// trust boundary cannot rely on a fence opt-out. Authors who need to describe
+// a dangerous pattern in documentation should obfuscate it (e.g.
+// `curl ATTACKER_URL`) or describe it in prose.
 export function scanBody(body: string): { errors: ValidationError[]; warnings: ValidationWarning[] } {
   const errors: ValidationError[] = [];
   const warnings: ValidationWarning[] = [];
 
   const lines = body.split('\n');
-  let fence: '```' | '~~~' | null = null;
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i] ?? '';
-    const trimmed = line.trimStart();
-
-    // Toggle fence state when we hit a fence marker. The fence line itself is
-    // also considered inside the block.
-    if (fence === null) {
-      if (trimmed.startsWith('```')) {
-        fence = '```';
-        continue;
-      }
-      if (trimmed.startsWith('~~~')) {
-        fence = '~~~';
-        continue;
-      }
-    } else {
-      if (trimmed.startsWith(fence)) {
-        fence = null;
-      }
-      continue;
-    }
-
-    // Outside a fence — apply rules.
     for (const rule of RULES) {
       if (rule.test(line)) {
         const finding = {

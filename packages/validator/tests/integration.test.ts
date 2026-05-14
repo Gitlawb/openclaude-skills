@@ -40,10 +40,10 @@ describe('validateSkillFolder integration', () => {
     expect(codes).toContain('scanner.secret_exfiltration');
   });
 
-  it('does not flag curl when it is inside a fence', async () => {
+  it('flags curl inside a fenced block (no fence opt-out)', async () => {
     const result = await validateSkillFolder(path.join(FIXTURES, 'curl-in-fence'));
-    expect(result.errors.map((e) => e.code)).not.toContain('scanner.curl_external_url');
-    expect(result.ok).toBe(true);
+    expect(result.errors.map((e) => e.code)).toContain('scanner.curl_external_url');
+    expect(result.ok).toBe(false);
   });
 
   it('reports a single clear error when SKILL.md is missing', async () => {
