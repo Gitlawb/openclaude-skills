@@ -107,6 +107,27 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/pr-description-writer",
+    "name": "pr-description-writer",
+    "description": "Writes pull request descriptions with Problem / Fix / Verification structure.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/pr-description-writer/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/pr-description-writer/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/pr-description-writer",
+    "sha256": "dd070265b97084a5d91da3e7375d2d228a2d8d260b1e8842d6224340b255a1eb",
+    "title": "PR Description Writer",
+    "category": "code-review",
+    "tags": [
+      "github",
+      "pr",
+      "documentation"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/pr-review",
     "name": "pr-review",
     "description": "Reviews pull requests for correctness, style, and risks.",
