@@ -3,7 +3,7 @@
 > Curated registry of installable skills for the [`openclaude`](https://github.com/Gitlawb/openclaude) CLI.
 
 [![npm](https://img.shields.io/npm/v/@gitlawb/skill-validator?label=%40gitlawb%2Fskill-validator)](https://www.npmjs.com/package/@gitlawb/skill-validator)
-[![Skills](https://img.shields.io/badge/skills-25-blue)](#available-skills)
+[![Skills](https://img.shields.io/badge/skills-26-blue)](#available-skills)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Validate](https://github.com/Gitlawb/openclaude-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Gitlawb/openclaude-skills/actions/workflows/validate.yml)
 
@@ -81,6 +81,7 @@ the next time you ask the agent something that matches the skill's
 | [`release-maintainer`](skills/release-maintainer/) | release | Prepares releases — version bumps, changelogs, release notes. |
 | [`security-audit`](skills/security-audit/) | security | Reviews code changes for common security risks. |
 | [`subagent-design`](skills/subagent-design/) | provider | Writes custom openclaude subagent definitions in .openclaude/agents/. |
+| [`supabase-rls-audit`](skills/supabase-rls-audit/) | security | Audits Supabase Row Level Security policies for missing tables, inverted logic, and anonymous access leaks. |
 | [`test-writer`](skills/test-writer/) | testing | Writes unit, integration, and end-to-end tests for existing or new code. |
 | [`vercel-build-fail-decode`](skills/vercel-build-fail-decode/) | ci | Reads Vercel build logs, finds the actual error among the noise, and proposes a fix. |
 

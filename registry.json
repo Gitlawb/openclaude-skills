@@ -496,6 +496,29 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/supabase-rls-audit",
+    "name": "supabase-rls-audit",
+    "description": "Audits Supabase Row Level Security policies for missing tables, inverted logic, and anonymous access leaks.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/supabase-rls-audit/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/supabase-rls-audit/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/supabase-rls-audit",
+    "sha256": "d321f19d5d72961b71e11f1b9fffb3b5598df990eb5693da728bad881a7ebd05",
+    "title": "Supabase RLS Audit",
+    "category": "security",
+    "tags": [
+      "supabase",
+      "rls",
+      "postgres",
+      "security",
+      "vibe-coding"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/test-writer",
     "name": "test-writer",
     "description": "Writes unit, integration, and end-to-end tests for existing or new code.",
