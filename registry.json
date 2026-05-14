@@ -215,6 +215,29 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/local-model-picker",
+    "name": "local-model-picker",
+    "description": "Recommends Ollama or LM Studio models based on hardware and goal.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/local-model-picker/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/local-model-picker/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/local-model-picker",
+    "sha256": "f1dc41bd26c6dbf8cf0f1dba52a6179ee8109d66f33d3b2f444c1bfcea0aa25b",
+    "title": "Local Model Picker",
+    "category": "provider",
+    "tags": [
+      "openclaude",
+      "ollama",
+      "lm-studio",
+      "local-models",
+      "hardware"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/pr-description-writer",
     "name": "pr-description-writer",
     "description": "Writes pull request descriptions with Problem / Fix / Verification structure.",
