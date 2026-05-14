@@ -26,7 +26,8 @@
     "spdx-license-ids": "^3.0.20"
   },
   "devDependencies": {
-    "@types/js-yaml": "^4.0.9"
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^25.7.0"
   },
   "publishConfig": {
     "access": "public"
