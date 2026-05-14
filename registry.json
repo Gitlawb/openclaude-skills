@@ -1,5 +1,26 @@
 [
   {
+    "id": "gitlawb/debugging",
+    "name": "debugging",
+    "description": "Helps diagnose and fix runtime errors, crashes, and unexpected behavior.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/debugging/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/debugging/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/debugging",
+    "sha256": "f5994bff6e63b0411fcc8780419cb69b0ae06510edbc8e19e0c7227d6b5a6f86",
+    "title": "Debugging",
+    "category": "debugging",
+    "tags": [
+      "debugging",
+      "troubleshooting",
+      "errors"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/pr-review",
     "name": "pr-review",
     "description": "Reviews pull requests for correctness, style, and risks.",
@@ -17,6 +38,48 @@
       "review",
       "github",
       "quality"
+    ],
+    "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/security-audit",
+    "name": "security-audit",
+    "description": "Reviews code changes for common security risks.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/security-audit/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/security-audit/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/security-audit",
+    "sha256": "844f51b4629db151e0d8fb9e17f85315b1adf870d5e1b4a1d2a4d5b3914553ee",
+    "title": "Security Audit",
+    "category": "security",
+    "tags": [
+      "security",
+      "audit",
+      "review"
+    ],
+    "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/test-writer",
+    "name": "test-writer",
+    "description": "Writes unit, integration, and end-to-end tests for existing or new code.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/test-writer/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/test-writer/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/test-writer",
+    "sha256": "63555a66f9dff796c1b8bf47e9b8b3d40743062933263644a700f4067fa9b2c5",
+    "title": "Test Writer",
+    "category": "testing",
+    "tags": [
+      "testing",
+      "tdd",
+      "coverage"
     ],
     "author": "gnanam"
   }
