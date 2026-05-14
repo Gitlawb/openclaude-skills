@@ -3,7 +3,7 @@
 > Curated registry of installable skills for the [`openclaude`](https://github.com/Gitlawb/openclaude) CLI.
 
 [![npm](https://img.shields.io/npm/v/@gitlawb/skill-validator?label=%40gitlawb%2Fskill-validator)](https://www.npmjs.com/package/@gitlawb/skill-validator)
-[![Skills](https://img.shields.io/badge/skills-26-blue)](#available-skills)
+[![Skills](https://img.shields.io/badge/skills-27-blue)](#available-skills)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Validate](https://github.com/Gitlawb/openclaude-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Gitlawb/openclaude-skills/actions/workflows/validate.yml)
 
@@ -80,6 +80,7 @@ the next time you ask the agent something that matches the skill's
 | [`regex-craft`](skills/regex-craft/) | general | Writes regex patterns from natural-language descriptions, with test cases and pitfall warnings. |
 | [`release-maintainer`](skills/release-maintainer/) | release | Prepares releases — version bumps, changelogs, release notes. |
 | [`security-audit`](skills/security-audit/) | security | Reviews code changes for common security risks. |
+| [`stripe-webhook-setup`](skills/stripe-webhook-setup/) | ci | Sets up Stripe webhooks correctly with signature verification, idempotency, and local testing. |
 | [`subagent-design`](skills/subagent-design/) | provider | Writes custom openclaude subagent definitions in .openclaude/agents/. |
 | [`supabase-rls-audit`](skills/supabase-rls-audit/) | security | Audits Supabase Row Level Security policies for missing tables, inverted logic, and anonymous access leaks. |
 | [`test-writer`](skills/test-writer/) | testing | Writes unit, integration, and end-to-end tests for existing or new code. |
