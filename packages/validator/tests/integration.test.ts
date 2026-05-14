@@ -40,10 +40,40 @@ describe('validateSkillFolder integration', () => {
     expect(codes).toContain('scanner.secret_exfiltration');
   });
 
-  it('does not flag curl when it is inside a fence', async () => {
+  it('flags curl inside a fenced block (no fence opt-out)', async () => {
     const result = await validateSkillFolder(path.join(FIXTURES, 'curl-in-fence'));
-    expect(result.errors.map((e) => e.code)).not.toContain('scanner.curl_external_url');
-    expect(result.ok).toBe(true);
+    expect(result.errors.map((e) => e.code)).toContain('scanner.curl_external_url');
+    expect(result.ok).toBe(false);
+  });
+
+  it('flags a folder whose name does not match the frontmatter "name"', async () => {
+    const folder = path.join(TMP_ROOT, 'mismatched-folder');
+    await fs.mkdir(folder, { recursive: true });
+    const content = [
+      '---',
+      'name: not-the-folder',
+      'description: Fixture whose frontmatter name disagrees with the folder name.',
+      'trust: community',
+      'version: 0.1.0',
+      'license: MIT',
+      '---',
+      '',
+      '# Mismatched',
+      '',
+      'Body padded to clear the minimum-character requirement so the validator',
+      'reaches the folder/name match check and reports it cleanly.',
+      '',
+      '## Use this skill when',
+      'never',
+      '',
+      '## Procedure',
+      '1. step',
+    ].join('\n');
+    await fs.writeFile(path.join(folder, 'SKILL.md'), content, 'utf8');
+
+    const result = await validateSkillFolder(folder);
+    expect(result.ok).toBe(false);
+    expect(result.errors.map((e) => e.code)).toContain('frontmatter.name_folder_mismatch');
   });
 
   it('reports a single clear error when SKILL.md is missing', async () => {

@@ -1,4 +1,5 @@
 import { promises as fs } from 'node:fs';
+import * as path from 'node:path';
 import { parseFrontmatter, splitFrontmatter } from './frontmatter.js';
 import { validateBody } from './body.js';
 import { scanSkillFolder } from './files.js';
@@ -87,6 +88,20 @@ export async function validateSkillFolder(folderPath: string): Promise<Validatio
     errors.push(...inner.errors);
     warnings.push(...inner.warnings);
     parsed = inner.parsed;
+
+    // The folder name drives `id` in the registry; the frontmatter name
+    // drives the `name` field. They must match so callers can't end up
+    // with entries like { id: "gitlawb/foo", name: "bar" }.
+    if (parsed) {
+      const folderName = path.basename(path.resolve(folderPath));
+      if (parsed.frontmatter.name !== folderName) {
+        errors.push({
+          code: 'frontmatter.name_folder_mismatch',
+          message: `Frontmatter "name" (${JSON.stringify(parsed.frontmatter.name)}) must match the folder name (${JSON.stringify(folderName)}).`,
+          field: 'name',
+        });
+      }
+    }
   }
 
   return {
