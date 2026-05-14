@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": "gitlawb/pr-review",
+    "name": "pr-review",
+    "description": "Reviews pull requests for correctness, style, and risks.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/pr-review/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/pr-review/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/pr-review",
+    "sha256": "b6511b0dd67ce3f98b9d5fcf8ae05d44ce286df8f2c2393487c9880dcb5bd2b1",
+    "title": "PR Review",
+    "category": "code-review",
+    "tags": [
+      "review",
+      "github",
+      "quality"
+    ],
+    "author": "gnanam"
+  }
+]
