@@ -515,5 +515,28 @@
       "coverage"
     ],
     "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/vercel-build-fail-decode",
+    "name": "vercel-build-fail-decode",
+    "description": "Reads Vercel build logs, finds the actual error among the noise, and proposes a fix.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/vercel-build-fail-decode/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/vercel-build-fail-decode/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/vercel-build-fail-decode",
+    "sha256": "10e18b6a44cf2978b002088a6c31af9461c12528bc37f33950d19c777740b2a8",
+    "title": "Vercel Build Fail Decode",
+    "category": "ci",
+    "tags": [
+      "vercel",
+      "deployment",
+      "build",
+      "nextjs",
+      "debugging"
+    ],
+    "author": "gnanam"
   }
 ]
