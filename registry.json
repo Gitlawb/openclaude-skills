@@ -21,6 +21,28 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/codeql-fix",
+    "name": "codeql-fix",
+    "description": "Reads a CodeQL or static-analysis finding and produces a targeted fix.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/codeql-fix/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/codeql-fix/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/codeql-fix",
+    "sha256": "a819a45902c59f98d55bf4a38f08db838d23a014e5efae3bffcaf53308647976",
+    "title": "CodeQL Fix",
+    "category": "security",
+    "tags": [
+      "codeql",
+      "sast",
+      "security",
+      "static-analysis"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/commit-message-craft",
     "name": "commit-message-craft",
     "description": "Writes commit messages that follow the repo's existing conventions.",
