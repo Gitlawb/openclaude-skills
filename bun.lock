@@ -16,14 +16,14 @@
     },
     "packages/validator": {
       "name": "@gitlawb/skill-validator",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "js-yaml": "^4.1.0",
-        "spdx-license-ids": "^3.0.20",
       },
       "devDependencies": {
         "@types/js-yaml": "^4.0.9",
         "@types/node": "^25.7.0",
+        "spdx-license-ids": "^3.0.20",
       },
     },
   },
