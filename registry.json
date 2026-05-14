@@ -193,6 +193,28 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/git-conflict-resolve",
+    "name": "git-conflict-resolve",
+    "description": "Resolves merge and rebase conflicts by preserving both sides' intent.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/git-conflict-resolve/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/git-conflict-resolve/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/git-conflict-resolve",
+    "sha256": "c9f406fb78206f36b6ef527ad377d016cb97649904d109a8234108cecb2a8181",
+    "title": "Git Conflict Resolve",
+    "category": "code-review",
+    "tags": [
+      "git",
+      "merge",
+      "rebase",
+      "conflicts"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/pr-description-writer",
     "name": "pr-description-writer",
     "description": "Writes pull request descriptions with Problem / Fix / Verification structure.",
