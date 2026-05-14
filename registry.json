@@ -407,6 +407,28 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/subagent-design",
+    "name": "subagent-design",
+    "description": "Writes custom openclaude subagent definitions in .openclaude/agents/.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/subagent-design/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/subagent-design/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/subagent-design",
+    "sha256": "ea720ab3af5b7dc0b9f6eaa43a92a4441f6ef21394a9b1b3b9d0f30a1a2a471d",
+    "title": "Subagent Design",
+    "category": "provider",
+    "tags": [
+      "openclaude",
+      "subagents",
+      "agents",
+      "customization"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/test-writer",
     "name": "test-writer",
     "description": "Writes unit, integration, and end-to-end tests for existing or new code.",
