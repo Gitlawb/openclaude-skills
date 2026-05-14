@@ -282,6 +282,29 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/nextjs-hydration-fix",
+    "name": "nextjs-hydration-fix",
+    "description": "Diagnoses Next.js hydration mismatches and proposes the smallest fix that resolves them.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/nextjs-hydration-fix/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/nextjs-hydration-fix/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/nextjs-hydration-fix",
+    "sha256": "25dc2a810f52b7bfea04186e5da5fe3ebac2ee17afdc8e88a61378c18f51c863",
+    "title": "Next.js Hydration Fix",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "react",
+      "hydration",
+      "ssr",
+      "debugging"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/pr-description-writer",
     "name": "pr-description-writer",
     "description": "Writes pull request descriptions with Problem / Fix / Verification structure.",
