@@ -81,14 +81,14 @@ describe('buildRegistry', () => {
     ]);
   });
 
-  it('computes the sha256 of SKILL.md correctly', async () => {
+  it('computes the sha256 of SKILL.md correctly (LF-normalized)', async () => {
     const skillsDir = path.join(TMP_ROOT, 'sha-skills');
     await fs.mkdir(skillsDir, { recursive: true });
     await copyFixtureAsSkill('valid-skill', skillsDir, 'valid-skill');
 
-    const expected = createHash('sha256')
-      .update(await fs.readFile(path.join(VALIDATOR_FIXTURES, 'valid-skill', 'SKILL.md')))
-      .digest('hex');
+    const source = await fs.readFile(path.join(VALIDATOR_FIXTURES, 'valid-skill', 'SKILL.md'), 'utf8');
+    const normalized = source.replace(/\r\n/g, '\n');
+    const expected = createHash('sha256').update(normalized, 'utf8').digest('hex');
 
     const result = await buildRegistry({
       skillsDir,
@@ -97,6 +97,31 @@ describe('buildRegistry', () => {
 
     expect(result.entries).toHaveLength(1);
     expect(result.entries[0]!.sha256).toBe(expected);
+  });
+
+  it('produces the same sha256 for LF and CRLF copies of the same skill', async () => {
+    const lfDir = path.join(TMP_ROOT, 'crlf-skills-lf');
+    const crlfDir = path.join(TMP_ROOT, 'crlf-skills-crlf');
+    await fs.mkdir(path.join(lfDir, 'valid-skill'), { recursive: true });
+    await fs.mkdir(path.join(crlfDir, 'valid-skill'), { recursive: true });
+
+    const source = await fs.readFile(path.join(VALIDATOR_FIXTURES, 'valid-skill', 'SKILL.md'), 'utf8');
+    const lf = source.replace(/\r\n/g, '\n');
+    const crlf = lf.replace(/\n/g, '\r\n');
+
+    await fs.writeFile(path.join(lfDir, 'valid-skill', 'SKILL.md'), lf, 'utf8');
+    await fs.writeFile(path.join(crlfDir, 'valid-skill', 'SKILL.md'), crlf, 'utf8');
+
+    const lfResult = await buildRegistry({
+      skillsDir: lfDir,
+      outputPath: path.join(TMP_ROOT, 'crlf-registry-lf.json'),
+    });
+    const crlfResult = await buildRegistry({
+      skillsDir: crlfDir,
+      outputPath: path.join(TMP_ROOT, 'crlf-registry-crlf.json'),
+    });
+
+    expect(lfResult.entries[0]!.sha256).toBe(crlfResult.entries[0]!.sha256);
   });
 
   it('is idempotent — running twice produces byte-identical output', async () => {

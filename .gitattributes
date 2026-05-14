@@ -1,0 +1,10 @@
+# Keep skill and project markdown checked out with LF line endings so the
+# registry sha256 is identical regardless of platform. build-registry.ts
+# also normalizes line endings before hashing, but enforcing LF here keeps
+# diffs and editors consistent across contributors.
+*.md text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf

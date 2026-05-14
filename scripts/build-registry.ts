@@ -95,6 +95,15 @@ export function sha256OfBuffer(buf: Buffer): string {
   return createHash('sha256').update(buf).digest('hex');
 }
 
+// Hash the file's LF-normalized bytes so a Windows checkout with
+// core.autocrlf=true produces the same digest as a Linux/macOS one. The
+// content of registry.json must depend only on the skill, not the
+// platform that built it.
+export function sha256OfSkillSource(buf: Buffer): string {
+  const normalized = buf.toString('utf8').replace(/\r\n/g, '\n');
+  return createHash('sha256').update(normalized, 'utf8').digest('hex');
+}
+
 export async function buildRegistry(options: BuildRegistryOptions = {}): Promise<BuildRegistryResult> {
   const root = repoRoot();
   const skillsDir = options.skillsDir ?? path.join(root, 'skills');
@@ -114,7 +123,7 @@ export async function buildRegistry(options: BuildRegistryOptions = {}): Promise
     }
 
     const buf = await fs.readFile(path.join(folder, 'SKILL.md'));
-    const sha256 = sha256OfBuffer(buf);
+    const sha256 = sha256OfSkillSource(buf);
     entries.push(entryFor(name, result, sha256, repoSlug));
   }
 
