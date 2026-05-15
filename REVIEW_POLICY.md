@@ -33,6 +33,20 @@ before it is filed.
 - **Promotion path**: a follow-up PR can request `verified` after
   use in the wild.
 
+### `deprecated`
+
+- **Authorship**: any.
+- **Approvals required**: one maintainer.
+- **Surface**: stays visible for users who already depend on it, but the
+  site and CLI should discourage new installs.
+- **Use case**: replaced, abandoned, or no longer recommended skills that
+  are not malicious enough to revoke.
+
+Non-community trust is controlled by `.maintainers/trust.json`, not by
+frontmatter alone. A reviewer may approve a skill content change without
+promoting trust; promotion requires the matching policy entry and the review
+bar for that tier.
+
 ## Rejection criteria
 
 Reviews close a PR (or request rewrite) only for explicit reasons. A
@@ -54,6 +68,8 @@ reviewer may not reject a PR for unstated taste preferences.
   changing the skill's intent (i.e., the skill genuinely needs to
   describe a banned pattern). In rare cases the right answer is to
   reshape the skill, not to bypass the scanner.
+- A PR attempts to self-promote `trust: verified` or `trust: official`
+  without a maintainer-owned `.maintainers/trust.json` entry.
 
 ## Service-level expectations
 
@@ -69,6 +85,8 @@ the PR thread; pinging earlier is noise.
 - Requires one maintainer review.
 - Typically requested after the skill has been used in the wild long
   enough to surface issues.
+- Must add or update `.maintainers/trust.json` for the exact
+  `gitlawb/<name>@<version>` key.
 
 ### `verified` → `official`
 
@@ -76,6 +94,14 @@ the PR thread; pinging earlier is noise.
 - Usually a rewrite rather than a promotion — the procedure, examples,
   and self-check tend to need re-shaping for the higher bar.
 - Two maintainer approvals.
+- Must add or update `.maintainers/trust.json` for the exact
+  `gitlawb/<name>@<version>` key.
+
+### any tier → `deprecated`
+
+- Opens as a PR that updates `.maintainers/trust.json`.
+- Requires a clear replacement, abandonment, or maintenance-risk reason.
+- Does not require deleting the skill from the registry.
 
 ## Updates to existing skills
 

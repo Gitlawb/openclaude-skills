@@ -3,7 +3,7 @@
 > Curated registry of installable skills for the [`openclaude`](https://github.com/Gitlawb/openclaude) CLI.
 
 [![npm](https://img.shields.io/npm/v/@gitlawb/skill-validator?label=%40gitlawb%2Fskill-validator)](https://www.npmjs.com/package/@gitlawb/skill-validator)
-[![Skills](https://img.shields.io/badge/skills-27-blue)](#available-skills)
+[![Skills](https://img.shields.io/badge/skills-27-orange)](#available-skills)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Validate](https://github.com/Gitlawb/openclaude-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Gitlawb/openclaude-skills/actions/workflows/validate.yml)
 
@@ -37,6 +37,8 @@ the same data as a browsable catalog.
 - `registry.json` is built from `skills/<name>/SKILL.md` files
 - Every entry is validated by [`@gitlawb/skill-validator`](https://www.npmjs.com/package/@gitlawb/skill-validator)
 - GitHub serves `registry.json` at a stable raw URL — no backend, no server, no API
+- Non-community trust must be backed by `.maintainers/trust.json`; frontmatter alone cannot self-promote a skill
+- `revocations.json` is reserved as the kill-switch list for compromised or withdrawn skill versions
 
 ## Install a skill
 
@@ -108,6 +110,8 @@ tags: [review, github, quality]
 trust: official
 version: 0.1.0
 license: MIT
+tools_required: [Read, Bash]
+min_openclaude_version: 0.10.0
 ---
 
 # PR Review
@@ -143,8 +147,11 @@ against. The short version:
 
 First-time contributors should set `trust: community` in frontmatter.
 Maintainer-reviewed skills become `verified`. `official` is reserved
-for skills authored by Gitlawb maintainers. See
-[`DECISIONS.md`](DECISIONS.md) for the trust tier definitions.
+for skills authored by Gitlawb maintainers. Maintainers promote a skill
+by adding the matching `gitlawb/<name>@<version>` entry to
+`.maintainers/trust.json`; contributors should not self-promote in the
+skill file. See [`DECISIONS.md`](DECISIONS.md) for the trust tier
+definitions.
 
 ## Trust tiers
 
@@ -153,10 +160,26 @@ for skills authored by Gitlawb maintainers. See
 | `official` | Gitlawb maintainers | 2-maintainer review |
 | `verified` | Third-party | 1-maintainer review, same quality bar as official |
 | `community` | Third-party | Automated checks only; "review before enabling" warning in CLI |
+| `deprecated` | Any | Maintainer marked as replaced/abandoned; visible but discouraged |
 
-The MVP ships only `official` skills. The schema accepts `verified` and
-`community` so the CLI and website can render them correctly once
-community submissions open.
+`trust` in `SKILL.md` is validated for readability, but registry output is
+controlled by `.maintainers/trust.json`. If a PR adds a new skill with
+`trust: official` and no maintainer policy entry, `bun run build:registry`
+fails. This prevents social-engineering PRs from gaining official or
+verified badges by editing frontmatter.
+
+## Security model
+
+The validator scans every line of a skill body, including fenced code blocks.
+It rejects hidden Unicode instructions, HTML comments, fake chat role markers,
+prompt-injection phrasing, sensitive credential paths, common exfiltration
+endpoints, unsafe fetch helpers, encoded eval patterns, and confirmation-bypass
+language. Authors documenting a dangerous pattern should describe it in prose
+or obfuscate the risky literal.
+
+Skills are prompt content, not executable packages. Skill folders may only
+contain `SKILL.md`, optional `README.md`, and the reserved `.skill-meta.json`.
+No scripts, binaries, nested folders, or postinstall behavior are allowed.
 
 ## Validator
 
