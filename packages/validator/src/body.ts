@@ -2,7 +2,7 @@ import { scanBody } from './scanner.js';
 import type { ValidationError, ValidationWarning } from './types.js';
 
 const MIN_BODY_CHARS = 200;
-const MAX_FILE_BYTES = 100 * 1024;
+const MAX_FILE_BYTES = 64 * 1024;
 
 const REQUIRED_HEADERS = ['## Use this skill when', '## Procedure'] as const;
 const RECOMMENDED_HEADERS = ['## Examples', '## Self-check before responding'] as const;

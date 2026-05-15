@@ -24,6 +24,18 @@ async function copyFixtureAsSkill(srcName: string, dstSkillsDir: string, dstName
   }
 }
 
+async function writeTrustPolicy(name: string, skillNames: string[]): Promise<string> {
+  const policyPath = path.join(TMP_ROOT, `${name}-trust.json`);
+  const policy = Object.fromEntries(
+    skillNames.map((skillName) => [
+      `gitlawb/${skillName}@0.1.0`,
+      { trust: 'official', reviewedBy: ['tests'], reason: 'test fixture' },
+    ]),
+  );
+  await fs.writeFile(policyPath, JSON.stringify(policy, null, 2), 'utf8');
+  return policyPath;
+}
+
 beforeAll(async () => {
   await cleanRoot();
 });
@@ -38,7 +50,11 @@ describe('buildRegistry', () => {
     const outputPath = path.join(TMP_ROOT, 'empty-registry.json');
     await fs.mkdir(skillsDir, { recursive: true });
 
-    const result = await buildRegistry({ skillsDir, outputPath });
+    const result = await buildRegistry({
+      skillsDir,
+      outputPath,
+      trustPolicyPath: path.join(TMP_ROOT, 'empty-trust-policy.json'),
+    });
 
     expect(result.errors).toEqual([]);
     expect(result.entries).toEqual([]);
@@ -52,7 +68,11 @@ describe('buildRegistry', () => {
     const skillsDir = path.join(TMP_ROOT, 'never-created');
     const outputPath = path.join(TMP_ROOT, 'never-registry.json');
 
-    const result = await buildRegistry({ skillsDir, outputPath });
+    const result = await buildRegistry({
+      skillsDir,
+      outputPath,
+      trustPolicyPath: path.join(TMP_ROOT, 'empty-trust-policy.json'),
+    });
     expect(result.errors).toEqual([]);
     expect(result.entries).toEqual([]);
   });
@@ -81,6 +101,7 @@ describe('buildRegistry', () => {
     const result = await buildRegistry({
       skillsDir,
       outputPath: path.join(TMP_ROOT, 'sorted-registry.json'),
+      trustPolicyPath: await writeTrustPolicy('sorted', ['alpha', 'mu', 'zeta']),
     });
 
     expect(result.errors).toEqual([]);
@@ -103,6 +124,7 @@ describe('buildRegistry', () => {
     const result = await buildRegistry({
       skillsDir,
       outputPath: path.join(TMP_ROOT, 'sha-registry.json'),
+      trustPolicyPath: await writeTrustPolicy('sha', ['valid-skill']),
     });
 
     expect(result.entries).toHaveLength(1);
@@ -125,10 +147,12 @@ describe('buildRegistry', () => {
     const lfResult = await buildRegistry({
       skillsDir: lfDir,
       outputPath: path.join(TMP_ROOT, 'crlf-registry-lf.json'),
+      trustPolicyPath: await writeTrustPolicy('crlf-lf', ['valid-skill']),
     });
     const crlfResult = await buildRegistry({
       skillsDir: crlfDir,
       outputPath: path.join(TMP_ROOT, 'crlf-registry-crlf.json'),
+      trustPolicyPath: await writeTrustPolicy('crlf-crlf', ['valid-skill']),
     });
 
     expect(lfResult.entries[0]!.sha256).toBe(crlfResult.entries[0]!.sha256);
@@ -140,10 +164,11 @@ describe('buildRegistry', () => {
     await fs.mkdir(skillsDir, { recursive: true });
     await copyFixtureAsSkill('valid-skill', skillsDir, 'valid-skill');
 
-    const a = await buildRegistry({ skillsDir, outputPath });
+    const trustPolicyPath = await writeTrustPolicy('idem', ['valid-skill']);
+    const a = await buildRegistry({ skillsDir, outputPath, trustPolicyPath });
     const onDiskA = await fs.readFile(outputPath, 'utf8');
 
-    const b = await buildRegistry({ skillsDir, outputPath });
+    const b = await buildRegistry({ skillsDir, outputPath, trustPolicyPath });
     const onDiskB = await fs.readFile(outputPath, 'utf8');
 
     expect(onDiskA).toBe(onDiskB);
@@ -157,7 +182,11 @@ describe('buildRegistry', () => {
     // banned-file fixture has an install.sh that the file policy rejects.
     await copyFixtureAsSkill('banned-file', skillsDir, 'banned');
 
-    const result = await buildRegistry({ skillsDir, outputPath });
+    const result = await buildRegistry({
+      skillsDir,
+      outputPath,
+      trustPolicyPath: path.join(TMP_ROOT, 'never-trust-policy.json'),
+    });
 
     expect(result.errors).toHaveLength(1);
     expect(result.errors[0]!.folder).toBe('banned');
@@ -172,12 +201,81 @@ describe('buildRegistry', () => {
     await fs.mkdir(skillsDir, { recursive: true });
     await copyFixtureAsSkill('valid-skill', skillsDir, 'valid-skill');
 
-    const result = await buildRegistry({ skillsDir, outputPath });
+    const result = await buildRegistry({
+      skillsDir,
+      outputPath,
+      trustPolicyPath: await writeTrustPolicy('fmt', ['valid-skill']),
+    });
 
     expect(result.serialized.endsWith('\n')).toBe(true);
     // 2-space indent — JSON.stringify(_, _, 2) gives the array's object opener
     // at "\n  {" and nested fields at "\n    \"...\"".
     expect(result.serialized).toContain('\n  {');
     expect(result.serialized).toMatch(/\n {4}"/);
+  });
+
+  it('defaults community skills to community without a trust policy entry', async () => {
+    const skillsDir = path.join(TMP_ROOT, 'community-skills');
+    await fs.mkdir(path.join(skillsDir, 'valid-skill'), { recursive: true });
+    const source = await fs.readFile(path.join(VALIDATOR_FIXTURES, 'valid-skill', 'SKILL.md'), 'utf8');
+    await fs.writeFile(
+      path.join(skillsDir, 'valid-skill', 'SKILL.md'),
+      source.replace(/^trust: official$/m, 'trust: community'),
+      'utf8',
+    );
+
+    const result = await buildRegistry({
+      skillsDir,
+      outputPath: path.join(TMP_ROOT, 'community-registry.json'),
+      trustPolicyPath: path.join(TMP_ROOT, 'missing-trust-policy.json'),
+    });
+
+    expect(result.errors).toEqual([]);
+    expect(result.entries[0]!.trust).toBe('community');
+  });
+
+  it('rejects non-community trust without a maintainer policy entry', async () => {
+    const skillsDir = path.join(TMP_ROOT, 'self-asserted-skills');
+    await fs.mkdir(skillsDir, { recursive: true });
+    await copyFixtureAsSkill('valid-skill', skillsDir, 'valid-skill');
+
+    const result = await buildRegistry({
+      skillsDir,
+      outputPath: path.join(TMP_ROOT, 'self-asserted-registry.json'),
+      trustPolicyPath: path.join(TMP_ROOT, 'empty-self-asserted-policy.json'),
+    });
+
+    expect(result.errors).toHaveLength(1);
+    expect(result.errors[0]!.errors.map((e) => e.code)).toContain('registry.trust_policy_required');
+  });
+
+  it('rejects stale trust policy entries', async () => {
+    const skillsDir = path.join(TMP_ROOT, 'stale-policy-skills');
+    await fs.mkdir(skillsDir, { recursive: true });
+    await copyFixtureAsSkill('valid-skill', skillsDir, 'valid-skill');
+
+    const policyPath = path.join(TMP_ROOT, 'stale-policy.json');
+    await fs.writeFile(
+      policyPath,
+      JSON.stringify(
+        {
+          'gitlawb/valid-skill@0.1.0': { trust: 'official' },
+          'gitlawb/missing-skill@0.1.0': { trust: 'official' },
+        },
+        null,
+        2,
+      ),
+      'utf8',
+    );
+
+    const result = await buildRegistry({
+      skillsDir,
+      outputPath: path.join(TMP_ROOT, 'stale-policy-registry.json'),
+      trustPolicyPath: policyPath,
+    });
+
+    expect(result.errors.flatMap((e) => e.errors.map((inner) => inner.code))).toContain(
+      'registry.trust_policy_stale',
+    );
   });
 });

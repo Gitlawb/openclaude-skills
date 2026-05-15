@@ -1,0 +1,117 @@
+{
+  "gitlawb/ci-fix@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/codeql-fix@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/commit-message-craft@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/database-review@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/debugging@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/dockerfile-review@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/docs-writer@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/error-message-decode@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/frontend-implementation@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/git-conflict-resolve@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/local-model-picker@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/loop-task-author@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/mcp-server-pick@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/pr-description-writer@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/pr-review@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/provider-debug@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/provider-setup@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/refactor-plan@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/regex-craft@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/release-maintainer@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/security-audit@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/subagent-design@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/test-writer@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  }
+}

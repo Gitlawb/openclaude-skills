@@ -292,7 +292,7 @@
     "repo": "https://github.com/Gitlawb/openclaude-skills",
     "path": "skills/pr-description-writer/SKILL.md",
     "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/pr-description-writer",
-    "sha256": "dd070265b97084a5d91da3e7375d2d228a2d8d260b1e8842d6224340b255a1eb",
+    "sha256": "3083cfbc8eef335e1555277c6ce3bbcd9d02c584a8d2eb924621a5f9e4418874",
     "title": "PR Description Writer",
     "category": "code-review",
     "tags": [

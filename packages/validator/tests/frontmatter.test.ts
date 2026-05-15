@@ -76,6 +76,16 @@ describe('frontmatter validation', () => {
     expect(errCodes(content)).toContain('frontmatter.invalid_tag');
   });
 
+  it('rejects invalid tools_required entries', () => {
+    const content = buildSkillMd(defaultFrontmatter({ tools_required: ['Read', '"bad tool"'] }));
+    expect(errCodes(content)).toContain('frontmatter.invalid_tool_required');
+  });
+
+  it('rejects invalid min_openclaude_version values', () => {
+    const content = buildSkillMd(defaultFrontmatter({ min_openclaude_version: 'latest' }));
+    expect(errCodes(content)).toContain('frontmatter.invalid_min_openclaude_version');
+  });
+
   it('emits a warning (not an error) for unknown fields', () => {
     const content = buildSkillMd(defaultFrontmatter({ weird_field: 'huh' }));
     const result = validateSkill(content);
@@ -97,12 +107,16 @@ describe('frontmatter validation', () => {
         tags: ['one', 'two-three'],
         author: 'gnanam',
         compatibility: { engines: 'node>=20' },
+        tools_required: ['Read', 'Bash'],
+        min_openclaude_version: '0.10.0',
       }),
     );
     const result = validateSkill(content);
     expect(result.ok).toBe(true);
     expect(result.parsed?.frontmatter.name).toBe('fixture');
     expect(result.parsed?.frontmatter.tags).toEqual(['one', 'two-three']);
+    expect(result.parsed?.frontmatter.tools_required).toEqual(['Read', 'Bash']);
+    expect(result.parsed?.frontmatter.min_openclaude_version).toBe('0.10.0');
     // No frontmatter warnings either since every field is recognized.
     expect(warnCodes(content).some((c) => c === 'frontmatter.unknown_field')).toBe(false);
   });

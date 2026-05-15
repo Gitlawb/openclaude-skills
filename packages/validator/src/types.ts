@@ -1,6 +1,6 @@
-export type TrustTier = 'official' | 'verified' | 'community';
+export type TrustTier = 'official' | 'verified' | 'community' | 'deprecated';
 
-export const TRUST_TIERS: readonly TrustTier[] = ['official', 'verified', 'community'] as const;
+export const TRUST_TIERS: readonly TrustTier[] = ['official', 'verified', 'community', 'deprecated'] as const;
 
 export const APPROVED_CATEGORIES = [
   'code-review',
@@ -31,6 +31,8 @@ export interface ParsedFrontmatter {
   tags?: string[];
   author?: string;
   compatibility?: Record<string, unknown>;
+  tools_required?: string[];
+  min_openclaude_version?: string;
   [extra: string]: unknown;
 }
 

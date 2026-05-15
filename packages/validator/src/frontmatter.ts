@@ -13,6 +13,7 @@ import {
 const NAME_RE = /^[a-z0-9][a-z0-9-]*$/;
 const TAG_RE = /^[a-z0-9][a-z0-9-]*$/;
 const AUTHOR_RE = /^[a-zA-Z0-9-]+$/;
+const TOOL_RE = /^[A-Za-z][A-Za-z0-9_-]*$/;
 // Inline semver — accepts MAJOR.MINOR.PATCH with optional pre-release/build suffix.
 const SEMVER_RE = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/;
 
@@ -27,6 +28,8 @@ const KNOWN_FIELDS = new Set([
   'tags',
   'author',
   'compatibility',
+  'tools_required',
+  'min_openclaude_version',
 ]);
 
 export interface FrontmatterParseResult {
@@ -223,6 +226,40 @@ export function parseFrontmatter(yamlText: string): FrontmatterParseResult {
           'frontmatter.invalid_compatibility',
           'Field "compatibility" must be an object.',
           'compatibility',
+        ),
+      );
+    }
+  }
+
+  // tools_required (optional)
+  if (fm.tools_required !== undefined) {
+    if (!Array.isArray(fm.tools_required)) {
+      errors.push(
+        err('frontmatter.invalid_tools_required', 'Field "tools_required" must be a list of tool names.', 'tools_required'),
+      );
+    } else {
+      for (const tool of fm.tools_required) {
+        if (typeof tool !== 'string' || !TOOL_RE.test(tool)) {
+          errors.push(
+            err(
+              'frontmatter.invalid_tool_required',
+              `Each tool name must match ${TOOL_RE}. Got: ${JSON.stringify(tool)}`,
+              'tools_required',
+            ),
+          );
+        }
+      }
+    }
+  }
+
+  // min_openclaude_version (optional)
+  if (fm.min_openclaude_version !== undefined) {
+    if (typeof fm.min_openclaude_version !== 'string' || !SEMVER_RE.test(fm.min_openclaude_version)) {
+      errors.push(
+        err(
+          'frontmatter.invalid_min_openclaude_version',
+          `Field "min_openclaude_version" must be valid semver. Got: ${JSON.stringify(fm.min_openclaude_version)}`,
+          'min_openclaude_version',
         ),
       );
     }

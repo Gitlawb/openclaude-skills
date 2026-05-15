@@ -36,6 +36,9 @@ trust: community
 version: 0.1.0
 license: MIT
 author: <your-github-handle>
+tools_required:
+  - Read
+min_openclaude_version: 0.10.0
 ---
 
 # <Display Title>
@@ -66,6 +69,10 @@ Out of scope: <example> → <what to do instead>
 
 The approved categories and the full schema live in
 [`DECISIONS.md`](DECISIONS.md).
+
+`tools_required` and `min_openclaude_version` are optional today, but add
+them when they help users understand what the skill needs before installing
+it.
 
 ## Validate locally
 
@@ -99,7 +106,22 @@ fails the PR if the committed registry is stale.
   approval. Maintainers only.
 
 Set `trust: community` in your frontmatter for your first PR. Don't
-ask for `verified` or `official` upfront.
+ask for `verified` or `official` upfront. Maintainers promote skills by
+editing `.maintainers/trust.json`; a PR that self-declares
+`trust: official` or `trust: verified` without that maintainer policy entry
+will fail the registry build.
+
+## Security scanner
+
+The validator scans the body as agent-readable instructions, not just
+human-readable markdown. It rejects hidden characters, HTML comments, fake
+chat role markers, prompt-injection wording, sensitive credential paths,
+common exfiltration endpoints, external fetch helpers, encoded eval patterns,
+and confirmation-bypass language.
+
+If you need to explain a dangerous pattern, describe it in prose or replace
+the dangerous literal with a placeholder such as `ATTACKER_URL`. Do not hide
+instructions in comments or zero-width characters.
 
 ## Submitting a PR
 

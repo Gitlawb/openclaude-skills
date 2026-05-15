@@ -77,8 +77,8 @@ imposing a template.
    description with a **Breaking** callout when there is one, and
    include the migration step.
 6. Add UI screenshots/placeholders if the diff touches a rendered
-   surface. A line like `<!-- screenshot of the new settings panel -->`
-   tells the author to attach one before requesting review.
+   surface. A visible placeholder such as `Screenshot: pending settings
+   panel capture` tells the author to attach one before requesting review.
 7. Match the tone — formal vs casual, first vs third person — from
    the recent merged PRs. Don't write "Closes the bug." in a repo
    that uses "fixes the bug where ...".
