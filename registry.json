@@ -282,6 +282,29 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/nextjs-hydration-fix",
+    "name": "nextjs-hydration-fix",
+    "description": "Diagnoses Next.js hydration mismatches and proposes the smallest fix that resolves them.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/nextjs-hydration-fix/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/nextjs-hydration-fix/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/nextjs-hydration-fix",
+    "sha256": "25dc2a810f52b7bfea04186e5da5fe3ebac2ee17afdc8e88a61378c18f51c863",
+    "title": "Next.js Hydration Fix",
+    "category": "frontend",
+    "tags": [
+      "nextjs",
+      "react",
+      "hydration",
+      "ssr",
+      "debugging"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/pr-description-writer",
     "name": "pr-description-writer",
     "description": "Writes pull request descriptions with Problem / Fix / Verification structure.",
@@ -451,6 +474,29 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/stripe-webhook-setup",
+    "name": "stripe-webhook-setup",
+    "description": "Sets up Stripe webhooks correctly with signature verification, idempotency, and local testing.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/stripe-webhook-setup/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/stripe-webhook-setup/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/stripe-webhook-setup",
+    "sha256": "533e80a85124cc174f093206efec4dbb521e3c701420394a5e16950573efd773",
+    "title": "Stripe Webhook Setup",
+    "category": "ci",
+    "tags": [
+      "stripe",
+      "payments",
+      "webhooks",
+      "vibe-coding",
+      "security"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/subagent-design",
     "name": "subagent-design",
     "description": "Writes custom openclaude subagent definitions in .openclaude/agents/.",
@@ -473,6 +519,29 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/supabase-rls-audit",
+    "name": "supabase-rls-audit",
+    "description": "Audits Supabase Row Level Security policies for missing tables, inverted logic, and anonymous access leaks.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/supabase-rls-audit/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/supabase-rls-audit/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/supabase-rls-audit",
+    "sha256": "d321f19d5d72961b71e11f1b9fffb3b5598df990eb5693da728bad881a7ebd05",
+    "title": "Supabase RLS Audit",
+    "category": "security",
+    "tags": [
+      "supabase",
+      "rls",
+      "postgres",
+      "security",
+      "vibe-coding"
+    ],
+    "author": "gnanam"
+  },
+  {
     "id": "gitlawb/test-writer",
     "name": "test-writer",
     "description": "Writes unit, integration, and end-to-end tests for existing or new code.",
@@ -490,6 +559,29 @@
       "testing",
       "tdd",
       "coverage"
+    ],
+    "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/vercel-build-fail-decode",
+    "name": "vercel-build-fail-decode",
+    "description": "Reads Vercel build logs, finds the actual error among the noise, and proposes a fix.",
+    "trust": "official",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/vercel-build-fail-decode/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/vercel-build-fail-decode/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/vercel-build-fail-decode",
+    "sha256": "10e18b6a44cf2978b002088a6c31af9461c12528bc37f33950d19c777740b2a8",
+    "title": "Vercel Build Fail Decode",
+    "category": "ci",
+    "tags": [
+      "vercel",
+      "deployment",
+      "build",
+      "nextjs",
+      "debugging"
     ],
     "author": "gnanam"
   }

@@ -64,6 +64,11 @@
     "reviewedBy": ["Gitlawb maintainers"],
     "reason": "Maintainer-authored official skill."
   },
+  "gitlawb/nextjs-hydration-fix@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
   "gitlawb/pr-description-writer@0.1.0": {
     "trust": "official",
     "reviewedBy": ["Gitlawb maintainers"],
@@ -104,12 +109,27 @@
     "reviewedBy": ["Gitlawb maintainers"],
     "reason": "Maintainer-authored official skill."
   },
+  "gitlawb/stripe-webhook-setup@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
   "gitlawb/subagent-design@0.1.0": {
     "trust": "official",
     "reviewedBy": ["Gitlawb maintainers"],
     "reason": "Maintainer-authored official skill."
   },
+  "gitlawb/supabase-rls-audit@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
   "gitlawb/test-writer@0.1.0": {
+    "trust": "official",
+    "reviewedBy": ["Gitlawb maintainers"],
+    "reason": "Maintainer-authored official skill."
+  },
+  "gitlawb/vercel-build-fail-decode@0.1.0": {
     "trust": "official",
     "reviewedBy": ["Gitlawb maintainers"],
     "reason": "Maintainer-authored official skill."

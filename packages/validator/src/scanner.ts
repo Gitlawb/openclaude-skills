@@ -28,7 +28,10 @@ const FAKE_ROLE_MARKER_RE =
   /<\/?(?:system|assistant|developer|user)>|<\|im_(?:start|end)\|>|\[\/?inst\]/;
 const ROLE_PREFIX_RE = /^\s*(?:human|assistant|system|developer)\s*:\s+/;
 const SENSITIVE_PATH_RE =
-  /(?:~\/\.ssh|\.ssh\/|id_rsa|id_ed25519|~\/\.aws|\.aws\/credentials|~\/\.config|~\/\.npmrc|(?:^|[\s"'`(])\.env(?:$|[\s"'`.)])|\bgh\s+auth\s+token\b|\baws_access_key_id\b)/;
+  /(?:~\/\.ssh|\.ssh\/|id_rsa|id_ed25519|~\/\.aws|\.aws\/credentials|~\/\.config|~\/\.npmrc|\bgh\s+auth\s+token\b|\baws_access_key_id\b)/;
+const ENV_FILE_RE = /(?:^|[\s"'`(])\.env(?:\.[a-z0-9_-]+)?(?:$|[\s"'`.)])/;
+const SENSITIVE_READ_VERB_RE =
+  /\b(?:read|cat|open|print|copy|include|send|upload|post|exfiltrate|leak|paste)\b/;
 const EXFIL_ENDPOINT_RE =
   /(?:discord\.com\/api\/webhooks|hooks\.slack\.com|t\.me\/|telegram\.org\/bot|requestbin|webhook\.site|ngrok(?:-free)?\.app|ngrok\.io|beeceptor|pastebin\.com)/;
 const FETCH_WITH_URL_RE =
@@ -126,7 +129,9 @@ const RULES: ScanRule[] = [
     code: 'scanner.sensitive_file_reference',
     severity: 'error',
     message: 'Line references sensitive local credential paths or token commands.',
-    test: (line) => SENSITIVE_PATH_RE.test(line.lower),
+    test: (line) =>
+      SENSITIVE_PATH_RE.test(line.lower) ||
+      (ENV_FILE_RE.test(line.lower) && SENSITIVE_READ_VERB_RE.test(line.lower)),
   },
   {
     code: 'scanner.exfiltration_endpoint',
