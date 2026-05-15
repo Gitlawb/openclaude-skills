@@ -16,7 +16,10 @@ interface ScanRule {
 const ZERO_WIDTH_RE = /[\u200B-\u200D\uFEFF]/;
 const BIDI_CONTROL_RE = /[\u202A-\u202E\u2066-\u2069]/;
 const UNICODE_TAG_RE = /[\u{E0000}-\u{E007F}]/u;
-const HTML_COMMENT_RE = /<!--|-->/;
+// HTML comments can close with either `-->` or the parser-quirk variant `--!>`.
+// Match both opener and either closer so hidden content cannot evade the scanner
+// by using `<!-- evil --!>` (CodeQL js/bad-tag-filter).
+const HTML_COMMENT_RE = /<!--|--!?>/;
 
 const HTTP_URL_RE = /https?:\/\//;
 const CREDENTIAL_RE = /\b(env|environ|secret|credential|api[_-]?key|password|token|bearer|authorization)\b/;
