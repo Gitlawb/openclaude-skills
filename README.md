@@ -3,7 +3,7 @@
 > Curated registry of installable skills for the [`openclaude`](https://github.com/Gitlawb/openclaude) CLI.
 
 [![npm](https://img.shields.io/npm/v/@gitlawb/skill-validator?label=%40gitlawb%2Fskill-validator)](https://www.npmjs.com/package/@gitlawb/skill-validator)
-[![Skills](https://img.shields.io/badge/skills-27-orange)](#available-skills)
+[![Skills](https://img.shields.io/badge/skills-10-orange)](#available-skills)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Validate](https://github.com/Gitlawb/openclaude-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Gitlawb/openclaude-skills/actions/workflows/validate.yml)
 
@@ -62,31 +62,14 @@ the next time you ask the agent something that matches the skill's
 |-------|----------|-------------|
 | [`ci-fix`](skills/ci-fix/) | ci | Diagnoses and fixes CI pipeline failures. |
 | [`codeql-fix`](skills/codeql-fix/) | security | Reads a CodeQL or static-analysis finding and produces a targeted fix. |
-| [`commit-message-craft`](skills/commit-message-craft/) | code-review | Writes commit messages that follow the repo's existing conventions. |
 | [`database-review`](skills/database-review/) | database | Reviews database schema changes, migrations, and queries. |
 | [`debugging`](skills/debugging/) | debugging | Helps diagnose and fix runtime errors, crashes, and unexpected behavior. |
-| [`dockerfile-review`](skills/dockerfile-review/) | ci | Reviews Dockerfiles for size, security, caching, and reproducibility issues. |
-| [`docs-writer`](skills/docs-writer/) | docs | Writes or updates documentation that matches the project's voice and structure. |
-| [`error-message-decode`](skills/error-message-decode/) | debugging | Decodes cryptic error messages, stack traces, and panics into actual causes and fix paths. |
 | [`frontend-implementation`](skills/frontend-implementation/) | frontend | Implements frontend components following project conventions. |
 | [`git-conflict-resolve`](skills/git-conflict-resolve/) | code-review | Resolves merge and rebase conflicts by preserving both sides' intent. |
-| [`local-model-picker`](skills/local-model-picker/) | provider | Recommends Ollama or LM Studio models based on hardware and goal. |
-| [`loop-task-author`](skills/loop-task-author/) | provider | Writes .openclaude/loop.md files for openclaude's scheduled maintenance loop. |
-| [`mcp-server-pick`](skills/mcp-server-pick/) | provider | Recommends and configures MCP servers for openclaude based on the user's described workflow. |
-| [`nextjs-hydration-fix`](skills/nextjs-hydration-fix/) | frontend | Diagnoses Next.js hydration mismatches and proposes the smallest fix that resolves them. |
-| [`pr-description-writer`](skills/pr-description-writer/) | code-review | Writes pull request descriptions with Problem / Fix / Verification structure. |
 | [`pr-review`](skills/pr-review/) | code-review | Reviews pull requests for correctness, style, and risks. |
 | [`provider-debug`](skills/provider-debug/) | provider | Diagnoses openclaude provider configuration problems and proposes fixes. |
-| [`provider-setup`](skills/provider-setup/) | provider | Configures openclaude to route through OpenAI-compatible providers. |
-| [`refactor-plan`](skills/refactor-plan/) | refactor | Plans multi-file refactors with clear steps and risk assessment. |
-| [`regex-craft`](skills/regex-craft/) | general | Writes regex patterns from natural-language descriptions, with test cases and pitfall warnings. |
-| [`release-maintainer`](skills/release-maintainer/) | release | Prepares releases — version bumps, changelogs, release notes. |
 | [`security-audit`](skills/security-audit/) | security | Reviews code changes for common security risks. |
-| [`stripe-webhook-setup`](skills/stripe-webhook-setup/) | ci | Sets up Stripe webhooks correctly with signature verification, idempotency, and local testing. |
-| [`subagent-design`](skills/subagent-design/) | provider | Writes custom openclaude subagent definitions in .openclaude/agents/. |
-| [`supabase-rls-audit`](skills/supabase-rls-audit/) | security | Audits Supabase Row Level Security policies for missing tables, inverted logic, and anonymous access leaks. |
 | [`test-writer`](skills/test-writer/) | testing | Writes unit, integration, and end-to-end tests for existing or new code. |
-| [`vercel-build-fail-decode`](skills/vercel-build-fail-decode/) | ci | Reads Vercel build logs, finds the actual error among the noise, and proposes a fix. |
 
 ## What a skill looks like
 

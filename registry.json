@@ -43,27 +43,6 @@
     "author": "gnanam"
   },
   {
-    "id": "gitlawb/commit-message-craft",
-    "name": "commit-message-craft",
-    "description": "Writes commit messages that follow the repo's existing conventions.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/commit-message-craft/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/commit-message-craft/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/commit-message-craft",
-    "sha256": "d38fc717b6844ed175cec1dfcbb2af12cdcaab7ae228ae8e6e4d05e0a6675be3",
-    "title": "Commit Message Craft",
-    "category": "code-review",
-    "tags": [
-      "git",
-      "commits",
-      "conventional-commits"
-    ],
-    "author": "gnanam"
-  },
-  {
     "id": "gitlawb/database-review",
     "name": "database-review",
     "description": "Reviews database schema changes, migrations, and queries.",
@@ -103,70 +82,6 @@
       "debugging",
       "troubleshooting",
       "errors"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/dockerfile-review",
-    "name": "dockerfile-review",
-    "description": "Reviews Dockerfiles for size, security, caching, and reproducibility issues.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/dockerfile-review/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/dockerfile-review/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/dockerfile-review",
-    "sha256": "7cdc2ac26a1be2bbee0560e29aac8ff172eb59e025bc769b2af2728d3df76476",
-    "title": "Dockerfile Review",
-    "category": "ci",
-    "tags": [
-      "docker",
-      "containers",
-      "devops",
-      "security"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/docs-writer",
-    "name": "docs-writer",
-    "description": "Writes or updates documentation that matches the project's voice and structure.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/docs-writer/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/docs-writer/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/docs-writer",
-    "sha256": "4bcbb6726b96e088df9e390996b813919548fdc7749dfba407ea0b627a3288c3",
-    "title": "Docs Writer",
-    "category": "docs",
-    "tags": [
-      "documentation",
-      "readme",
-      "technical-writing"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/error-message-decode",
-    "name": "error-message-decode",
-    "description": "Decodes cryptic error messages, stack traces, and panics into actual causes and fix paths.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/error-message-decode/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/error-message-decode/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/error-message-decode",
-    "sha256": "e74e4e0f0bf128272f5d5616aea2dd11c548171ee867f9b8dc91eca010ec0102",
-    "title": "Error Message Decode",
-    "category": "debugging",
-    "tags": [
-      "errors",
-      "debugging",
-      "troubleshooting"
     ],
     "author": "gnanam"
   },
@@ -215,117 +130,6 @@
     "author": "gnanam"
   },
   {
-    "id": "gitlawb/local-model-picker",
-    "name": "local-model-picker",
-    "description": "Recommends Ollama or LM Studio models based on hardware and goal.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/local-model-picker/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/local-model-picker/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/local-model-picker",
-    "sha256": "f1dc41bd26c6dbf8cf0f1dba52a6179ee8109d66f33d3b2f444c1bfcea0aa25b",
-    "title": "Local Model Picker",
-    "category": "provider",
-    "tags": [
-      "openclaude",
-      "ollama",
-      "lm-studio",
-      "local-models",
-      "hardware"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/loop-task-author",
-    "name": "loop-task-author",
-    "description": "Writes .openclaude/loop.md files for openclaude's scheduled maintenance loop.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/loop-task-author/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/loop-task-author/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/loop-task-author",
-    "sha256": "50d358d5a24175f213dff43f857bf8c174883127ff69fdc06e0cdf3f8adbea17",
-    "title": "Loop Task Author",
-    "category": "provider",
-    "tags": [
-      "openclaude",
-      "cron",
-      "automation",
-      "scheduled-tasks"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/mcp-server-pick",
-    "name": "mcp-server-pick",
-    "description": "Recommends and configures MCP servers for openclaude based on the user's described workflow.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/mcp-server-pick/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/mcp-server-pick/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/mcp-server-pick",
-    "sha256": "a11146e6e8e822fbcce0649bbb108f8bec569400879a44deaea21e6ab0019362",
-    "title": "MCP Server Pick",
-    "category": "provider",
-    "tags": [
-      "openclaude",
-      "mcp",
-      "integrations",
-      "model-context-protocol"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/nextjs-hydration-fix",
-    "name": "nextjs-hydration-fix",
-    "description": "Diagnoses Next.js hydration mismatches and proposes the smallest fix that resolves them.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/nextjs-hydration-fix/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/nextjs-hydration-fix/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/nextjs-hydration-fix",
-    "sha256": "25dc2a810f52b7bfea04186e5da5fe3ebac2ee17afdc8e88a61378c18f51c863",
-    "title": "Next.js Hydration Fix",
-    "category": "frontend",
-    "tags": [
-      "nextjs",
-      "react",
-      "hydration",
-      "ssr",
-      "debugging"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/pr-description-writer",
-    "name": "pr-description-writer",
-    "description": "Writes pull request descriptions with Problem / Fix / Verification structure.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/pr-description-writer/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/pr-description-writer/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/pr-description-writer",
-    "sha256": "3083cfbc8eef335e1555277c6ce3bbcd9d02c584a8d2eb924621a5f9e4418874",
-    "title": "PR Description Writer",
-    "category": "code-review",
-    "tags": [
-      "github",
-      "pr",
-      "documentation"
-    ],
-    "author": "gnanam"
-  },
-  {
     "id": "gitlawb/pr-review",
     "name": "pr-review",
     "description": "Reviews pull requests for correctness, style, and risks.",
@@ -369,90 +173,6 @@
     "author": "gnanam"
   },
   {
-    "id": "gitlawb/provider-setup",
-    "name": "provider-setup",
-    "description": "Configures openclaude to route through OpenAI-compatible providers.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/provider-setup/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/provider-setup/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/provider-setup",
-    "sha256": "97207f8ebed27b2f35dc409eaaebad2fc3697bfa124dcad68b11664b79a7d791",
-    "title": "Provider Setup",
-    "category": "provider",
-    "tags": [
-      "openclaude",
-      "provider",
-      "configuration"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/refactor-plan",
-    "name": "refactor-plan",
-    "description": "Plans multi-file refactors with clear steps and risk assessment.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/refactor-plan/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/refactor-plan/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/refactor-plan",
-    "sha256": "a33cfd6ca37e4e913a4498160b7e316d7c9f240e0410cc5fdf019a50e1982f9e",
-    "title": "Refactor Plan",
-    "category": "refactor",
-    "tags": [
-      "refactor",
-      "architecture",
-      "planning"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/regex-craft",
-    "name": "regex-craft",
-    "description": "Writes regex patterns from natural-language descriptions, with test cases and pitfall warnings.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/regex-craft/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/regex-craft/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/regex-craft",
-    "sha256": "faec0f8a75803795e5cb082c5b64ca7c129315c47b499230dcfaeac97ef76519",
-    "title": "Regex Craft",
-    "category": "general",
-    "tags": [
-      "regex",
-      "parsing",
-      "patterns"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/release-maintainer",
-    "name": "release-maintainer",
-    "description": "Prepares releases — version bumps, changelogs, release notes.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/release-maintainer/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/release-maintainer/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/release-maintainer",
-    "sha256": "eccf12b0fccab63dfec20fd20458a6eb1ea4db59b574e89c8de199f871b1bb84",
-    "title": "Release Maintainer",
-    "category": "release",
-    "tags": [
-      "release",
-      "changelog",
-      "versioning"
-    ],
-    "author": "gnanam"
-  },
-  {
     "id": "gitlawb/security-audit",
     "name": "security-audit",
     "description": "Reviews code changes for common security risks.",
@@ -474,74 +194,6 @@
     "author": "gnanam"
   },
   {
-    "id": "gitlawb/stripe-webhook-setup",
-    "name": "stripe-webhook-setup",
-    "description": "Sets up Stripe webhooks correctly with signature verification, idempotency, and local testing.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/stripe-webhook-setup/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/stripe-webhook-setup/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/stripe-webhook-setup",
-    "sha256": "533e80a85124cc174f093206efec4dbb521e3c701420394a5e16950573efd773",
-    "title": "Stripe Webhook Setup",
-    "category": "ci",
-    "tags": [
-      "stripe",
-      "payments",
-      "webhooks",
-      "vibe-coding",
-      "security"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/subagent-design",
-    "name": "subagent-design",
-    "description": "Writes custom openclaude subagent definitions in .openclaude/agents/.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/subagent-design/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/subagent-design/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/subagent-design",
-    "sha256": "ea720ab3af5b7dc0b9f6eaa43a92a4441f6ef21394a9b1b3b9d0f30a1a2a471d",
-    "title": "Subagent Design",
-    "category": "provider",
-    "tags": [
-      "openclaude",
-      "subagents",
-      "agents",
-      "customization"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/supabase-rls-audit",
-    "name": "supabase-rls-audit",
-    "description": "Audits Supabase Row Level Security policies for missing tables, inverted logic, and anonymous access leaks.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/supabase-rls-audit/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/supabase-rls-audit/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/supabase-rls-audit",
-    "sha256": "d321f19d5d72961b71e11f1b9fffb3b5598df990eb5693da728bad881a7ebd05",
-    "title": "Supabase RLS Audit",
-    "category": "security",
-    "tags": [
-      "supabase",
-      "rls",
-      "postgres",
-      "security",
-      "vibe-coding"
-    ],
-    "author": "gnanam"
-  },
-  {
     "id": "gitlawb/test-writer",
     "name": "test-writer",
     "description": "Writes unit, integration, and end-to-end tests for existing or new code.",
@@ -559,29 +211,6 @@
       "testing",
       "tdd",
       "coverage"
-    ],
-    "author": "gnanam"
-  },
-  {
-    "id": "gitlawb/vercel-build-fail-decode",
-    "name": "vercel-build-fail-decode",
-    "description": "Reads Vercel build logs, finds the actual error among the noise, and proposes a fix.",
-    "trust": "official",
-    "version": "0.1.0",
-    "license": "MIT",
-    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/vercel-build-fail-decode/SKILL.md",
-    "repo": "https://github.com/Gitlawb/openclaude-skills",
-    "path": "skills/vercel-build-fail-decode/SKILL.md",
-    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/vercel-build-fail-decode",
-    "sha256": "10e18b6a44cf2978b002088a6c31af9461c12528bc37f33950d19c777740b2a8",
-    "title": "Vercel Build Fail Decode",
-    "category": "ci",
-    "tags": [
-      "vercel",
-      "deployment",
-      "build",
-      "nextjs",
-      "debugging"
     ],
     "author": "gnanam"
   }
