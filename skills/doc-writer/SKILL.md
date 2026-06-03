@@ -11,6 +11,7 @@ tags:
 trust: community
 version: 0.1.0
 license: MIT
+author: https://github.com/Hyperion147
 tools_required:
   - Read
   - Bash
