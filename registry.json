@@ -86,6 +86,32 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/doc-writer",
+    "name": "doc-writer",
+    "description": "Writes and improves README files, API docs, changelogs, and other repository documentation.",
+    "trust": "community",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/doc-writer/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/doc-writer/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/doc-writer",
+    "sha256": "1144e8299d5fbff0405bc2f705b802ad6d2d6418bbee19924c0553ea3b302547",
+    "title": "Doc Writer",
+    "category": "docs",
+    "tags": [
+      "docs",
+      "readme",
+      "api-docs",
+      "changelog"
+    ],
+    "tools_required": [
+      "Read",
+      "Bash"
+    ],
+    "min_openclaude_version": "0.10.0"
+  },
+  {
     "id": "gitlawb/frontend-implementation",
     "name": "frontend-implementation",
     "description": "Implements frontend components following project conventions.",
