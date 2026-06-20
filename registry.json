@@ -213,5 +213,30 @@
       "coverage"
     ],
     "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/mainstreet",
+    "name": "mainstreet",
+    "description": "Onchain reputation oracle for AI agents on Base. Verify counterparty trust before x402 settlement.",
+    "trust": "community",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/mainstreet/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/mainstreet/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/mainstreet",
+    "sha256": "635df6bcbf50defbbf90b61a5e8fd47ab7fbd998a56ef2d6aef80b0b44ba935a",
+    "title": "MainStreet",
+    "category": "security",
+    "tags": [
+      "base",
+      "x402",
+      "erc-8004",
+      "reputation",
+      "oracle",
+      "attestation",
+      "ai-agents"
+    ],
+    "author": "philpof102-svg"
   }
 ]
