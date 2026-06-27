@@ -217,7 +217,7 @@
   {
     "id": "gitlawb/btc-market-signal",
     "name": "btc-market-signal",
-    "description": "READ-ONLY calibrated BTC market-regime signal for AI agents — regime + bias + conviction + out-of-sample (walk-forward) Sharpe, or an honest ABSTAIN when there is no robust edge. Not a trade, not investment advice.",
+    "description": "READ-ONLY informational BTC market-regime read for AI agents (regime, directional bias, conviction, out-of-sample Sharpe) that ABSTAINS in chop and honestly flags its breakout edge is BTC-sample-specific — does NOT generalize to ETH/SOL/BNB, so informational, not proven alpha. Not a trade, not investment advice.",
     "trust": "community",
     "version": "0.1.0",
     "license": "MIT",
@@ -225,7 +225,7 @@
     "repo": "https://github.com/Gitlawb/openclaude-skills",
     "path": "skills/btc-market-signal/SKILL.md",
     "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/btc-market-signal",
-    "sha256": "a2631542eb5b814129603ce7eb19c45ff03d118c1d506e6e0027525f47d64c8a",
+    "sha256": "6fc1d602a62b5a8eb61bb598512914fc0ba1aebd9a60c5b9a83141e27e4d9e33",
     "title": "BTC Market Signal",
     "category": "general",
     "tags": [
