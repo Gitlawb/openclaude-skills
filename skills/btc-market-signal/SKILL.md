@@ -62,7 +62,7 @@ Most market tools sell a confident call. This one:
 ## Attach it
 Ships as an MCP server (JSON-RPC 2.0, protocol 2024-11-05):
 - **stdio:** `{ "mcpServers": { "btc-signal": { "command": "node", "args": ["btc-mcp-server.js"] } } }`
-- **HTTP** (OpenGateway/OpenClaude agents): run the HTTP transport and POST JSON-RPC; `GET /health`.
+- **HTTP** (OpenGateway/OpenClaude agents): POST JSON-RPC `tools/call` to the **live hosted endpoint** `https://fleet-mcp-production-56fd.up.railway.app/` (`GET /health` for liveness) — or self-host the transport. Read-only; geo-resilient price feed (Binance→Kraken→CoinGecko fallback).
 
 Pairs with the `mainstreet` skill: an agent can check counterparty reputation **and** get an honest
 market regime read from the same session.
