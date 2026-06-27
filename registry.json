@@ -213,5 +213,30 @@
       "coverage"
     ],
     "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/btc-market-signal",
+    "name": "btc-market-signal",
+    "description": "READ-ONLY calibrated BTC market-regime signal for AI agents — regime + bias + conviction + out-of-sample (walk-forward) Sharpe, or an honest ABSTAIN when there is no robust edge. Not a trade, not investment advice.",
+    "trust": "community",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/btc-market-signal/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/btc-market-signal/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/btc-market-signal",
+    "sha256": "a2631542eb5b814129603ce7eb19c45ff03d118c1d506e6e0027525f47d64c8a",
+    "title": "BTC Market Signal",
+    "category": "general",
+    "tags": [
+      "btc",
+      "market-signal",
+      "quant",
+      "mcp",
+      "read-only",
+      "oracle",
+      "ai-agents"
+    ],
+    "author": "philpof102-svg"
   }
 ]
