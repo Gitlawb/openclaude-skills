@@ -213,5 +213,57 @@
       "coverage"
     ],
     "author": "gnanam"
+  },
+  {
+    "id": "gitlawb/btc-market-signal",
+    "name": "btc-market-signal",
+    "description": "READ-ONLY informational BTC market-regime read for AI agents (regime, directional bias, conviction, out-of-sample Sharpe) that ABSTAINS in chop and honestly flags its breakout edge is BTC-sample-specific — does NOT generalize to ETH/SOL/BNB, so informational, not proven alpha. Not a trade, not investment advice.",
+    "trust": "community",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/btc-market-signal/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/btc-market-signal/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/btc-market-signal",
+    "sha256": "297f660d03149f6278a2397a7d8fd4a68cbaf058f06912154080d7ffa0f69a41",
+    "title": "BTC Market Signal",
+    "category": "general",
+    "tags": [
+      "btc",
+      "market-signal",
+      "quant",
+      "mcp",
+      "read-only",
+      "oracle",
+      "ai-agents"
+    ],
+    "author": "philpof102-svg"
+  },
+  {
+    "id": "gitlawb/agent-preflight",
+    "name": "agent-preflight",
+    "description": "READ-ONLY \"safe to act\" trust gate for autonomous agents: given a counterparty wallet, returns PROCEED/CAUTION/BLOCK backed by MainStreet live on-chain-attested reputation (trust-shield color, 0-100 score, flags). The \"safe-to-pay\" complement to KYT \"allowed-to-pay\". FAILS CLOSED on unknown/unverifiable addresses; carries an EIP-712 + on-chain verifiability anchor. No order/sign/transfer method. Not financial advice.",
+    "trust": "community",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/agent-preflight/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/agent-preflight/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/agent-preflight",
+    "sha256": "1abe64303d8c3535ed41f73d22811c8929c3c29a4cf0c9f9121a9ecd2a01c5c3",
+    "title": "Agent Preflight",
+    "category": "security",
+    "tags": [
+      "reputation",
+      "trust",
+      "agent-safety",
+      "x402",
+      "mcp",
+      "read-only",
+      "onchain",
+      "base",
+      "ai-agents"
+    ],
+    "author": "philpof102-svg"
   }
 ]
