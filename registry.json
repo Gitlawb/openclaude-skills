@@ -130,6 +130,32 @@
     "author": "gnanam"
   },
   {
+    "id": "gitlawb/gitlawb-sidecar",
+    "name": "gitlawb-sidecar",
+    "description": "Add a signed GitLawb mirror next to GitHub. Use when publishing, backing up, or proving a commit without changing origin.",
+    "trust": "community",
+    "version": "0.1.0",
+    "license": "MIT",
+    "source": "https://raw.githubusercontent.com/Gitlawb/openclaude-skills/main/skills/gitlawb-sidecar/SKILL.md",
+    "repo": "https://github.com/Gitlawb/openclaude-skills",
+    "path": "skills/gitlawb-sidecar/SKILL.md",
+    "homepage": "https://github.com/Gitlawb/openclaude-skills/tree/main/skills/gitlawb-sidecar",
+    "sha256": "4396c47e3a9815f3c054c0dccddbc384ce6decf87df02ec833fa731184975917",
+    "title": "GitLawb Sidecar",
+    "category": "release",
+    "tags": [
+      "git",
+      "github",
+      "gitlawb",
+      "provenance"
+    ],
+    "author": "DevOps21133",
+    "tools_required": [
+      "Bash"
+    ],
+    "min_openclaude_version": "0.10.0"
+  },
+  {
     "id": "gitlawb/pr-review",
     "name": "pr-review",
     "description": "Reviews pull requests for correctness, style, and risks.",
